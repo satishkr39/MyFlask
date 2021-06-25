@@ -6,12 +6,22 @@
 </head>
 <body>
   <h2>new User Registration Form</h2>
-  <form>
-    <input type="text">
+  <form action="https://www.google.com" method="get">
+    <label for="email">EMAIL: </label>
+    <input type="text" id="email" name="user_email" placeholder="Enter email here">
     <br>
-    <input  type="password">
+    <label for="password">PASSWORD:</label>
+    <input id=password" type="password" name="password" placeholder="password">
     <br>
-    <input type="submit">
+      <p>Are you above 18?
+          <label for="yes">YES: </label>
+      <input type="radio" name="age_check" value="yes" id="yes">
+          
+           <label for="no">NO: </label>
+      <input type="radio" name="age_check" value="yes" id="no">
+
+      </p>
+    <input type="submit" value="Submit">
   </form>
 </body>
 </html>
