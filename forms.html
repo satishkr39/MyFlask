@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>my first form</title>
+    <link rel="stylesheet" href="forms.css">
 </head>
 <body>
-  <h2>new User Registration Form</h2>
+  <h1>new User Registration Form</h1>
   <form action="https://www.google.com" method="get">
     <label for="email">EMAIL: </label>
     <input type="text" id="email" name="user_email" placeholder="Enter email here">
@@ -21,7 +22,7 @@
       <input type="radio" name="age_check" value="yes" id="no">
       </p>
 
-      <p>How clean is your room?
+      <p id="rating">How clean is your room?
       <select name="stars">
         <option value="Great">3</option>
         <option value="good">2</option>
@@ -30,5 +31,9 @@
       </p>
     <input type="submit" value="Submit">
   </form>
+    <p>
+        <ol> this is item 1</ol>
+        <ol> THis is item 2</ol>
+    </p>
 </body>
 </html>
