@@ -1,0 +1,20 @@
+/* to use background color */
+body{
+    background : gray;
+}
+/*
+to use background image from a url
+body{
+
+    background : URL(https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    background-repeat : no-repeat;
+} */
+
+div{
+    color : blue;
+    background : red;
+    border : yellow;
+    border-width : thick;
+    border-style : dotted;
+}
+
