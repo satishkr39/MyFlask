@@ -1,0 +1,12 @@
+label{
+    color : blue;
+    border : purple;
+    border-size : 3px;
+}
+
+input{
+     border : purple solid;
+    border-width : 2px;
+    width : 200px;
+    height : 20px;
+}
