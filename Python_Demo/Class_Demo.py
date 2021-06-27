@@ -18,13 +18,23 @@ class Dog:
         self.breed = breed
         self.name = name
 
+# repr returns the string representation of class object. when we print an object this repr is called.
+    def __repr__(self):
+        return f" Breed: {self.breed}, name: {self.name}"
+
+# it used to return the len() method
+    def __len__(self):
+        return self.name
+
 
 # myDog = Dog('Lab')
 # print("Breed of myDog is " + myDog.breed)
 
 myDog = Dog('Lab', 'MyDogName')
 print(myDog.breed, myDog.name)
+print("Printing objects calls repr method: ", myDog)
 print(myDog.species)
+print(len(myDog))
 
 
 # CIRCLE CLASS DEMO
