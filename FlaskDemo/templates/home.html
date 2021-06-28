@@ -6,6 +6,35 @@
 </head>
 <body>
     <h1>My Home Page !!!</h1>
+    <h3> Welcome Dear, Your Name is : {{var_name}} received from python file </h3> <!-- Displaying our variable -->
+
+    <!-- Display my list variable -->
+    <h3> My List Received is : {{my_list}} </h3>
+
+    <!-- Display my dictionary variable -->
+    <h3>Dictionary Received is : {{my_dict}} </h3>
+
+    <!-- Display my dictionary one element -->
+    <h3>Dictionary Item 2 is : {{my_dict[2]}} </h3>
+
+    <!-- Iterating over my dictionary -->
+    <h3> Iterating Over Dictionary item </h3>
+    <ul>
+        {% for item in my_dict %}
+        <li>
+            {{item}}
+        </li>
+        {% endfor %}
+    </ul>
+
+      <!-- If block on mu_list -->
+    <h3> If Block Demo </h3>
+    {% if 'Bat' in my_list %}
+        <p> Bat Found </p>
+    {% else %}
+        <p> Bat Not Found </p>
+    {% endif %}
+
     <img src="https://images.unsplash.com/photo-1546238232-20216dec9f72?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1007&q=80">
 </body>
 </html>
