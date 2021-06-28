@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base_puppy.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Puppy</title>
+</head>
+<body>
+
+    {% block content %}
+        <h1> This is About Puppy Page </h1>
+        <h2> This is puppy page for : {{var_name}} </h2>
+
+    <!-- THe below img puts random image from Unsplash websiite each time it refresh -->
+        <img src="https://source.unsplash.com/1600x900/?nature,water">
+    {% endblock %}
+
+</body>
+</html>
