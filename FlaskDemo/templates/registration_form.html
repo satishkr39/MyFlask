@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "base_form.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+    {% block content %}
+        <div class="jumbotron">
+            <h1> welcome to registration form </h1>
+            <p> Fill out the form. Notice we don't save any info!</p>
+            <form action="{{url_for('thank_form')}}">  <!-- Thank you Page redirection -->
+                <label for="first">First Name:</label>
+                <input type="text" id="first"  name="first" placeholder="Enter Name">
+
+                 <label for="last">Last Name:</label>
+                <input type="text" id="last" name="last" placeholder="Enter last Name">
+
+                <input type="submit" value="Submit Form">
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

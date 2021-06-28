@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "base_form.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Form</title>
+</head>
+<body>
+    {% block content %}
+       <div class="jumbotron">
+           <p>Welcome to Puppy Rock !</p>
+           <p> Wanna Sign Up for our Puppy Band?</p>
+           <a href="{{ url_for('registration_form') }}">Click here to Register!</a>
+       </div>
+    {% endblock %}
+</body>
+</html>
