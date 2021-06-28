@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "user_base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main User Name</title>
+</head>
+<body>
+    {% block content %}
+    <div class="jumbotron">
+        <h1> Enter Your user name to be validate</h1>
+        <form class="form-control" action="{{ url_for('username_checker')}}">
+            <label for="username">Enter username to be validate: </label>
+            <input type="text" name="username" id="username" placeholder="Enter username">
+            <input type="submit">
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "user_base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UserName Result</title>
+</head>
+<body>
+  {% block content %}
+    <div class="jumbotron">
+      <h3> Your Results Displayed Here : </h3>
+      <h4> You Entered the following username : {{name}} </h4>
+        <h5>Your UserName is : {{check}}</h5>
+    </div>
+  {% endblock %}
+</body>
+</html>
