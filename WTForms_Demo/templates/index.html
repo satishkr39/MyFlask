@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puppy Page</title>
+</head>
+<body>
+   <h1> Welcome to Puppy Survey Page</h1>
+    <!-- connecting form to html template -->
+    <form method="POST">
+        {{ form.hidden_tag() }} <!-- hidden tag always must : the instance form is coming form py file-->
+        {{ form.breed.label() }} {{ form.breed() }}
+        <br>
+        {{ form.neutered.label }} {{ form.neutered }}
+        <br>
+        {{ form.mood.label }} {{ form.mood }}
+        <br>
+        {{ form.food_choice.label }} {{ form.food_choice }}
+        <br>
+        {{ form.feedback.label }} {{ form.feedback }}
+        <br>
+        {{ form.submit() }}
+    </form>
+
+
+</body>
+</html>

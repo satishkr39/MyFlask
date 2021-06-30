@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You!!!</title>
+</head>
+<body>
+  <h2> Thank You for submitting the survey. Here is what we have got from you.</h2>
+  <ul>
+    <li> Breed: {{ session['breed']}}</li>
+    <li> Neutered: {{ session['neutered'] }}</li>
+    <li> Mood: {{ session['mood'] }}</li>
+    <li> food_choice: {{ session['food'] }}</li>
+    <li> feedback: {{ session['feedback'] }}</li>
+  </ul>
+</body>
+</html>
