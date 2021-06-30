@@ -1,4 +1,4 @@
-from flask import Flask, flash, url_for, redirect, render_template
+from flask import Flask, flash, url_for, redirect, render_template, session
 from wtforms import StringField, SubmitField
 from flask_wtf import FlaskForm
 
@@ -10,6 +10,7 @@ app.config['SECRET_KEY'] = 'secretkey'
 
 # define our class and inherit FlaskForm
 class FlashFormDemo(FlaskForm):
+    breed = StringField("Enter your breed")
     submit = SubmitField("Click to Submit")
 
 
@@ -18,8 +19,9 @@ class FlashFormDemo(FlaskForm):
 def index():
     my_form = FlashFormDemo()
     if my_form.validate_on_submit():
-        flash('You clicked the button')  # this return a iterable object consisting of all messages in
-        # get_flashed_messages()
+        session['breed'] = my_form.breed.data  # getting the data from template to py file
+        flash('You changed the breed to '+str(session['breed']))  # this return a iterable object consisting of all
+        # messages in get_flashed_messages()
         return redirect(url_for('index'))  # redirecting to same index page
     return render_template('index.html', form=my_form)
 

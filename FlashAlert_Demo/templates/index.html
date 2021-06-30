@@ -21,6 +21,8 @@
 
     <form method="POST">
         {{ form.hidden_tag() }}
+        <br>
+        {{ form.breed.label() }} {{ form.breed() }}
         {{ form.submit() }}
     </form>
 </body>
