@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Page</title>
+</head>
+<body>
+    {% block content %}
+        <div class="jumbotron">
+            <h2> Have a puppy needs to be adopted?</h2><br>
+            <h3> Fill out the form please </h3>
+            <form method="POST">
+                {{form.hidden_tag()}}
+                {{form.name.label}} {{form.name}}
+                {{form.submit()}}
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

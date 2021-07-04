@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Puppy</title>
+</head>
+<body>
+    {% block content %}
+    <div class="jumbotron">
+        <h2> Here is list of all puppies </h2>
+
+        <ul>
+            {% for pupp in puppies %}
+            <li>{{pupp}}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    {% endblock %}
+</body>
+</html>

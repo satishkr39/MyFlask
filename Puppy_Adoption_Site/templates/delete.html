@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Page</title>
+</head>
+<body>
+    {% block content %}
+    <h2> Did a puppy got adopted? </h2>
+    <p> If so please delete from here </p>
+    <div>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.id.label }} {{ form.id }}
+        {{ form.submit() }}
+    </form>
+    </div>
+    {% endblock %}
+</body>
+</html>
