@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Owner Page</title>
+</head>
+<body>
+  {% block content %}
+  <div class="jumbotron">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.owner.label }} {{form.owner}}
+      <br>
+      {{ form.puppy_id.label }} {{form.puppy_id}}
+      {{ form.submit()}}
+    </form>
+  </div>
+  {% endblock %}
+</body>
+</html>
