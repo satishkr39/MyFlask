@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block content %}
+        <div class="jumbotron">
+            {% if current_user.is_authenticated %}
+            <h4>Hi {{ current_user.username }} </h4>
+            {% else %}
+            <p> Please login or register </p>
+            {% endif %}
+        </div>
+    {% endblock %}
+</body>
+</html>
