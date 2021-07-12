@@ -17,12 +17,12 @@ Migrate(app, db)
 
 class Puppy(db.Model):
     __tablename__ = 'puppies'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, unique=True)
     name = db.Column(db.Text)
     # ONE TO MANY : each puppy can have many toys
-    toys = db.relationship('Toy', backref='puppy', lazy='dynamic')  # to create a foreign key relationship with toy table
+    toys = db.relationship('Toy', backref='p', lazy='select')  # to create a foreign key relationship with toy table
     # ONE TO ONE : each owner can have one puppy
-    owner = db.relationship('Owner', backref='puppy', uselist=False)  # The Relationship returns collection of objects
+    owner = db.relationship('Owner', backref='pw', uselist=False)  # The Relationship returns collection of objects
 
     # since we can have one puppy one owner so we don't want list to be returned so setting it to False
 
@@ -31,7 +31,7 @@ class Puppy(db.Model):
 
     def __repr__(self):
         if self.owner:
-            return f"Puppy name is {self.name} and owner is {self.owner.name}"
+            return f"Puppy name is {self.name} and owner is {self.owner.name} {self.toys}"
         else:
             return f"Puppy name is {self.name} and has no owner"
 
@@ -45,7 +45,7 @@ class Toy(db.Model):
 
     __tablename__ = 'toys'
 
-    id = db.Column(db.Integer,primary_key = True)
+    id = db.Column(db.Integer,primary_key = True, unique=True)
     item_name = db.Column(db.Text)
     # Connect the toy to the puppy that owns it.
     # We use puppies.id because __tablename__='puppies'
@@ -58,10 +58,13 @@ class Toy(db.Model):
 
 class Owner(db.Model):
     __tablename__ = 'owners'
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key = True, unique=True)
     name = db.Column(db.Text)
     puppy_id = db.Column(db.Integer, db.ForeignKey('puppies.id'))
 
     def __init__(self, name, puppy_id):
         self.name = name
         self.puppy_id = puppy_id
+
+    def __repr__(self):
+        return f"the owner name is {self.name} and puppy_id {self.puppy_id}"

@@ -1,6 +1,7 @@
 # The script to create our puppy, owner, toys and insert in db
 from model import db, Puppy, Owner, Toy
 
+'''
 # Create 2 puppies
 rufus = Puppy('Rufus')
 Sammy = Puppy('Sammy')
@@ -30,6 +31,32 @@ rufus = Puppy.query.filter_by(name='Rufus').all()[0]
 print(" ##### RUFUS Details #####", rufus)
 
 # get rufus toys by calling method from Rufus class
-rufus.report_toys()
+rufus.report_toys()'''
+
+
+# print(Puppy.query.get_or_404(1))
+# print all toys of puppy
+#my_list = Toy.query.filter_by(puppy_id=2).all()
+#for item in my_list:
+#    print(item.p+" and the toys are "+str(item))
+
+# adding owner to puppy id 2
+'''ow1 = Owner('sk', 2)
+db.session.add(ow1)
+db.session.commit()'''
+
+# print pupyy name of any owner
+ow = Owner.query.filter_by(id=2).first()  # direct from owners table
+print(" Owner Name ",ow) # op =  Owner Name  the owner name is sk and puppy_id 2 : from Owner class
+
+# prints the puppy name
+ow = Owner.query.filter_by(id=2).first().pw  # using backref we reach to parent table and call the repr fn of that class
+print(ow)  # op = Puppy name is Sammy and owner is sk [<Toy 5>, <Toy 6>]: from main Puppy class
+
+# to get the parent class attribute we use backref.attribute
+print("puppy name is ",ow.name) # op =  puppy name is  Sammy
+print("Puppy Id is ", ow.id) # op = Puppy Id is  2
+
+
 
 
