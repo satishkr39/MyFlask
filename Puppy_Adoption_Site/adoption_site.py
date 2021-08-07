@@ -26,7 +26,10 @@ class Puppy(db.Model):
         self.name = name
 
     def __repr__(self):
-        return f"The puppy name is {self.name}"
+        if self.owner:
+            return f"The puppy name is {self.name} and owner name is {self.owner.name}"
+        else:
+            return f" The puppy name is {self.name} and has no owner yet"
 
 # Model Class : Owner table
 class Owner(db.Model):
@@ -39,8 +42,8 @@ class Owner(db.Model):
         self.name = name
         self.puppy_id = puppy_id
 
-    def __repr__(self):
-        return f"The puppy name is {self.name} and owner is {self.puppy_id}"
+    # def __repr__(self):
+    #    return f"The puppy name is {self.name} and owner is {self.puppy_id}"
 
 # Views function for HomePage
 @app.route('/')

@@ -19,4 +19,4 @@ Migrate(app, db)
 # configure our application to have management of login users
 login_manager.init_app(app)
 # tell users which view to go on login
-login_manager.login_view = 'login'  # navigate to login view once the user logs in.
+# login_manager.login_view = 'login'  # navigate to login view once the user logs in.

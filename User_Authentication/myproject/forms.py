@@ -12,12 +12,12 @@ class LoginForm(FlaskForm):
 
 
 class RegistrationForm(FlaskForm):
-    email = StringField("Emai", validators=[DataRequired(), Email()])
+    email = StringField("Email", validators=[DataRequired(), Email()])
     username = StringField("UserName", validators=[DataRequired()])
     # the password filed and pass_confirm needs to be same in order to pass the EqualTo requirements.
     password = PasswordField("Password: ", validators=[DataRequired(), EqualTo(fieldname='pass_confirm',
                                                                                message="Password must match")])
-    pass_confirm = PasswordField("COnfirm Password: ", validators=[DataRequired()])
+    pass_confirm = PasswordField("Confirm Password: ", validators=[DataRequired()])
     submit = SubmitField('Register!')
 
     def validate_email(self, email):
